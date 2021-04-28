@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "Create a multi-az, load balanced and auto-scaled sample web site running on an ngnix Web Server. The application is configured to span all Availability Zones in the region and is auto-scaled based on the CPU utilization of the web servers.The instances are load balanced with a simple health check against the default web page. **WARNING** This template creates one or more Amazon EC2 instances and an Elastic Load Balancer.",
+  "Description" : "Create a multi-az, load balanced and auto-scaled  web site running on an ngnix Web Server. The application is configured to span all Availability Zones in the region and is auto-scaled based on the CPU utilization of the web servers.The instances are load balanced with a simple health check against the default web page. **WARNING** This template creates one or more Amazon EC2 instances and an Elastic Load Balancer.",
 
   "Parameters" : {
     "InstanceType" : {
@@ -72,7 +72,7 @@
       "Type" : "AWS::IAM::Role",
       "Properties" : {
         "AssumeRolePolicyDocument": {
-          "Version" : "2012-10-17",
+          "Version" : "2010-09-09",
           "Statement" : [
             {
               "Effect" : "Allow",
