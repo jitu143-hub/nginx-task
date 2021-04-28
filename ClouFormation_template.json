@@ -13,20 +13,18 @@
         "t2.nano", 
         "t2.micro", 
         "t2.small" 
-
+   
       ],
-"UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
-     "#! /bin/sh",
-     "sudo su root",
-     "yum update -y",
-     "yum install docker -y",
-     "service docker start",
-     "usermod -a -G docker root",
-     "chkconfig docker on",
-     "yum install git -y",
-     "git pull https://github.com/jitu143-hub/nginx-task.git",
-     "docker build -t nginx .",
-     "docker run -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx"
+  "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
+       "#! /bin/sh",
+        "sudo amazon-linux-extras install docker",
+        "sudo service docker start",
+        "sudo usermod -a -G docker ec2-user",
+        "sudo chkconfig docker on",
+        "sudo yum install -y git",
+        "git clone https://github.com/jitu143-hub/nginx-task.git",
+        "docker build -t nginx .",
+        "docker run -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx"
      ]]}}
  
     },
