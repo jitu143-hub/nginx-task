@@ -24,7 +24,7 @@
         "sudo yum install -y git",
 	"git clone https://github.com/jitu143-hub/nginx-task.git",
         "docker build -t nginx .",
-        "docker run -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx"  
+        "docker run -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html -v /var/run/docker.sock:/var/run/docker.sock nginx"  
      ]]}}
  
     },
